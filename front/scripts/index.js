@@ -18,21 +18,22 @@ function CreatetHTML(tempData) {
     titulo.textContent = title;
 
     const año = document.createElement("h4");
-    año.textContent = year; 
-    año.classList.add("contenido");
+    año.textContent = `Año: ${year}`; 
+    año.classList.add("año");
    
     const director_ = document.createElement("h4");
-    director_.textContent = director;
-    director_.classList.add("contenido");
+    director_.textContent = `Director: ${director}`;
+    director_.classList.add("director");
 
 
     const duracion = document.createElement("h4");
-    duracion.textContent = duration;
-    duracion.classList.add("contenido");
+    duracion.textContent =`Duracion : ${duration}` ;
+    duracion.classList.add("duracion");
     
    
 
     const imagen = document.createElement("img");
+    imagen.classList.add("imagen");
     imagen.src = poster;
    
 

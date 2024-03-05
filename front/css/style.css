@@ -222,63 +222,69 @@
   }
 }
 /*!*********************************Cards******************************************************************** */
+
 .contenedor-tarjetas {
     display: flex;
-    flex-wrap: wrap; /* Para que las tarjetas se envuelvan a la siguiente línea si no caben en la pantalla */
-    justify-content: center; /* Para centrar las tarjetas horizontalmente */
+    flex-wrap: nowrap; /* Evita que las tarjetas se envuelvan a la siguiente línea */
+    justify-content: center;
+    overflow-x: auto; /* Agrega desplazamiento horizontal si el contenido es demasiado ancho */
 }
+
+.imagen {
+	width: 300px;
+	height: 450px;
+	
+}
+
 .tarjeta {
-    width: calc(33.33% - 40px); /* Ancho para que haya tres tarjetas por fila con márgenes */
-    margin: 20px;
+    margin: 0 10px; /* Ajusta los márgenes entre las tarjetas según sea necesario */
+    flex: 0 0 auto; /* Evita que las tarjetas cambien de tamaño */
+    width: 300px; /* Anchura fija para las tarjetas */
+	margin: 0 30px; 
+	transition: transform 0.5s ease;
+	cursor: pointer;
 }
 
 .tarjetaCuerpo {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    border: 1px solid yellow;
-    box-shadow: 2px 2px 8px 4px #d3d3d3d1;
     border-radius: 15px;
-    font-family: sans-serif;
-	font-size: 20px;
-    background-color: yellow;
-    transition: all 0.3s ease-in-out; /* Transición suave */
-}
-
-.tarjetaCuerpo:hover {
-    transform: translateY(-5px); /* Efecto de elevación en hover */
+    width: 100%; /* Ancho del cuerpo de la tarjeta */
+    height: 300px; /* Altura de la tarjeta */
+    
 }
 
 .titulo {
     font-size: 20px;
+    font-family: 'rockwell', sans-serif;
+    font-weight: bold;
     padding: 10px;
     text-align: center;
-    color: white;
-    background-color: #f0f0f0;
+    color: black;
+    background-color: #cacf00;
     border-radius: 15px 15px 0 0;
+    word-break: break-all;
 }
 
-.contenido {
+.director,
+.duracion,
+.año {
     font-size: 16px;
-    color: white;
-    padding: 10px;
+    font-family: 'rockwell', sans-serif;
+    color: black;
+    padding: 10px 0px 5px 20px;
+    background-color: #cacf00;
+    border-radius: 0; /* Quita el redondeo de las esquinas */
 }
 
-@media screen and (max-width: 768px) {
-    .tarjeta {
-        width: calc(50% - 40px); /* Ancho para que haya dos tarjetas por fila con márgenes */
-    }
+.año {
+    border-radius: 0px 0px 15px 15px;
 }
 
-@media screen and (max-width: 576px) {
-    .tarjeta {
-        width: calc(100% - 40px); /* Ancho para que haya una tarjeta por fila con márgenes */
-    }
+.tarjeta:hover {
+    transform: scale(1.1); /* Ajusta el valor según el nivel de zoom deseado */
+	
 }
-  
-
-
-
 
 
 
