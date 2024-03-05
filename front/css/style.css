@@ -1,0 +1,348 @@
+
+  html {
+	background-color: black;
+  }
+
+  .logo {
+	width: 200px;
+	height: 85px;
+	margin: 0 auto;
+	display: block;
+  
+  }
+  /*!-----------------------------Menu-------------------------------------------------------------------------*/
+  a {
+	color: white;
+	cursor: pointer;
+	font-size: 38px;
+	text-decoration: none;
+	touch-action: manipulation;
+  }
+ 
+  nav {
+	background-color: black;
+	box-shadow: 0 0.8rem 2.4rem,
+	  0 1.6rem 5.6rem, 0 2.4rem 8rem;
+	display: flex;
+	flex-flow: row nowrap;
+	grid-row: 1;
+	padding: 1.2rem;
+	
+	ul {
+	  display: flex;
+	  flex-flow: row nowrap;
+  
+	  &:nth-of-type(2) {
+		align-items: center;
+		gap: 1.2em;
+		justify-content: center;
+		width: 100%;
+  
+		li {
+		  align-items: center;
+  
+		  &:nth-child(-n + 3) {
+			display: none;
+			border-bottom: 0.4rem solid transparent;
+			height: 100%;
+			padding: 0 1.2rem;
+			transition: border 350ms ease-in;
+		  }
+  
+		  &:first-of-type,
+		  &:last-of-type {
+			margin-left: auto;
+		  }
+
+		  &:hover {
+			border-color:  rgb(255 209 98 / 60%);
+  
+			a {
+			  color: yellow;
+			}
+		  }
+		}
+	  }
+	}
+	a {
+	  transition: color 350ms ease-in;
+	}
+  }
+  @media only screen and (min-width: 760px) {
+	nav {
+	  ul {
+		&:nth-of-type(2) {
+		  li {
+			&:nth-child(-n + 3) {
+			  display: flex;
+			}
+		  }
+		}
+	  }
+	}
+  }
+/*!-------- TITULO PROXIMAMENTE-------------------------------------------------------------------------*/
+  .proximosEstrenos{
+	border: 3px solid black;
+    border-radius: 6px  ;
+    text-align: center;
+    margin: 5px 10px 5px 10px;
+    padding: 10px;
+    color: #492b7c;
+    background-color: #0a2f35;
+    box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.5);
+    font-size: 40px;
+  }
+  .title {
+	text-align: center;
+	display: -webkit-box;
+	display: flex;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	        flex-direction: column;
+	-webkit-box-align: center;
+	        align-items: center;
+	-webkit-box-pack: center;
+	        justify-content: center;
+	letter-spacing: 1px;
+}
+
+.fondo {
+	background-image: url(https://media.giphy.com/media/26BROrSHlmyzzHf3i/giphy.gif);
+	background-size: cover;
+	color: transparent;
+	-moz-background-clip: text;
+	-webkit-background-clip: text;
+	text-transform: uppercase;
+	font-size: 60px;
+	line-height: .75;
+	margin: 10px 0;
+}
+
+  .lineaSuperior{
+	border: none;
+    border-top: 2px solid yellow;
+	
+	margin-bottom: 45px;
+}
+.lineaInferior{
+	border: none;
+    border-top: 2px solid yellow;
+	margin-top: 20px;
+	
+}
+ 
+
+/* !-----------------------------SlideShow-------------------------------------------------------------------------*/
+
+.container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  height: 500px;
+  gap: 10px;
+  margin-top: 30px;
+
+  > div {
+    flex: 0 0 120px;
+    border-radius: 0.5rem;
+    transition: 0.5s ease-in-out;
+    cursor: pointer;
+    box-shadow: 1px 5px 15px #1e0e3e;
+    position: relative;
+    overflow: hidden;
+
+    &:nth-of-type(1) {
+      background: url("https://es.web.img2.acsta.net/pictures/21/12/01/12/07/0243323.jpg")
+        no-repeat 50% / cover;
+    }
+    &:nth-of-type(2) {
+      background: url("https://www.originalfilmart.com/cdn/shop/products/terminator_1984_french_1p_original_film_art_600x.jpg?v=1568844372")
+        no-repeat 50% / cover;
+    }
+    &:nth-of-type(3) {
+      background: url("https://es.web.img3.acsta.net/pictures/23/06/01/13/53/1499036.jpg")
+        no-repeat 50% / cover;
+    }
+    &:nth-of-type(4) {
+      background: url("https://static.cinepolis.com/resources/mx/movies/posters/414x603/41041-248676-20230404050924.jpg")
+        no-repeat 50% / cover;
+    }
+	&:nth-of-type(5) {
+		background: url("https://www.ecartelera.com/carteles/5400/5407/001_m.jpg")
+		  no-repeat 50% / cover;
+	  }
+	  &:nth-of-type(6) {
+		background: url("https://lumiere-a.akamaihd.net/v1/images/56015l02_bigsal_argentina_intpayoff_4x5_b6776139.jpeg?region=0%2C0%2C2250%2C2813")
+		  no-repeat 50% / cover;
+	  }
+	  &:nth-of-type(7) {
+		background: url("https://www.ecartelera.com/carteles/5200/5211/001_m.jpg")
+		  no-repeat 50% / cover;
+	  }
+
+    .content {
+      font-size: 1.5rem;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      padding: 15px;
+      opacity: 0;
+      flex-direction: column;
+      height: 100%;
+      justify-content: flex-end;
+      background: rgb(2, 2, 46);
+      background: linear-gradient(
+        0deg,
+        rgba(2, 2, 46, 0.6755077030812324) 0%,
+        rgba(255, 255, 255, 0) 100%
+      );
+      transform: translatey(100%);
+      transition: opacity 0.5s ease-in-out, transform 0.5s 0.2s;
+      visibility: hidden;
+
+      span {
+        display: block;
+        margin-top: 5px;
+        font-size: 1.2rem;
+      }
+    }
+
+    &:hover {
+      flex: 0 0 250px;
+      box-shadow: 1px 3px 15px #7645d8;
+      transform: translatey(-30px);
+    }
+
+    &:hover .content {
+      opacity: 1;
+      transform: translatey(0%);
+      visibility: visible;
+    }
+  }
+}
+/*!*********************************Cards******************************************************************** */
+.contenedor-tarjetas {
+    display: flex;
+    flex-wrap: wrap; /* Para que las tarjetas se envuelvan a la siguiente línea si no caben en la pantalla */
+    justify-content: center; /* Para centrar las tarjetas horizontalmente */
+}
+.tarjeta {
+    width: calc(33.33% - 40px); /* Ancho para que haya tres tarjetas por fila con márgenes */
+    margin: 20px;
+}
+
+.tarjetaCuerpo {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border: 1px solid yellow;
+    box-shadow: 2px 2px 8px 4px #d3d3d3d1;
+    border-radius: 15px;
+    font-family: sans-serif;
+	font-size: 20px;
+    background-color: yellow;
+    transition: all 0.3s ease-in-out; /* Transición suave */
+}
+
+.tarjetaCuerpo:hover {
+    transform: translateY(-5px); /* Efecto de elevación en hover */
+}
+
+.titulo {
+    font-size: 20px;
+    padding: 10px;
+    text-align: center;
+    color: white;
+    background-color: #f0f0f0;
+    border-radius: 15px 15px 0 0;
+}
+
+.contenido {
+    font-size: 16px;
+    color: white;
+    padding: 10px;
+}
+
+@media screen and (max-width: 768px) {
+    .tarjeta {
+        width: calc(50% - 40px); /* Ancho para que haya dos tarjetas por fila con márgenes */
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .tarjeta {
+        width: calc(100% - 40px); /* Ancho para que haya una tarjeta por fila con márgenes */
+    }
+}
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*!-----------------------------Footer-------------------------------------------------------------------------*/
+#footer {
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	background: url(../assets/img/footer-tail.gif) repeat-x left top #bfbfbf;
+	color: #1d1d1d;
+	font-size: 0.86em;
+	line-height: 1.667em;
+	text-align: center;
+}
+#footer .left {
+	background:url(../assets/img/footer-left.gif) no-repeat left top;
+}
+#footer .right {
+	min-height:89px;
+	height:auto !important;
+	height:89px;
+	background:url(../assets/img/footer-right.gif) no-repeat right top;
+	text-align:center;
+}
+#footer .footerlink {
+	padding:35px 25px;
+}
+.footerlink p {
+	margin:0;
+	padding:0;
+	line-height:normal;
+	white-space:nowrap;
+	text-indent:inherit;
+	
+}
+.footerlink a {
+	color:#1d1d1d;
+	font-weight:normal;
+	margin:0;
+	padding:0;
+	border:none;
+	text-decoration:underline;
+	background-color:transparent;
+}
+.footerlink a:hover {
+	color:#1d1d1d;
+	background-color:transparent;
+	text-decoration:none;
+}
+.footerlink .lf {
+	float:left;
+}
+.footerlink .rf {
+	float:right;
+}
+body {
+	overflow-x: hidden;
+  }

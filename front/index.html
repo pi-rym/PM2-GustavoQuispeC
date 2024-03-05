@@ -3,11 +3,92 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <link href="css/reset.css" rel="stylesheet" type="text/css" />
+    <link href="css/style.css" rel="stylesheet" type="text/css" />
+
+    <title>Cinema PopCorn</title>
   </head>
   <body>
-    <h1>Proyecto de M2</h1>
+    <header>
+      <nav>
+        <ul>
+          <li>
+            <a href="index.html" class="link">
+              <img class="logo" src="assets/img/LogoCine.png" alt="Cinema" />
+            </a>
+          </li>
+        </ul>
 
+        <ul>
+          <li><a href="index.html" class="link"> Inicio </a></li>
+          <li><a href="about.html" class="link"> Quienes somos </a></li>
+          <li><a href="contac.html" class="link"> Contáctanos </a></li>
+          <li></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <div class="proximosEstrenos">
+        <div class="title">
+          <h3 class="fondo">Proximamente en nuestras Salas</h3>
+        </div>
+      </div>
+      <hr class="lineaSuperior" />
+      <section>
+        <div class="container">
+          <div>
+            <div class="content">
+              <span>Proximamente</span>
+            </div>
+          </div>
+          <div>
+            <div class="content">
+              <span>Proximamente</span>
+            </div>
+          </div>
+          <div>
+            <div class="content">
+              <span>Proximamente</span>
+            </div>
+          </div>
+          <div>
+            <div class="content">
+              <span>Proximamente</span>
+            </div>
+          </div>
+          <div>
+            <div class="content">
+              <span>Proximamente</span>
+            </div>
+          </div>
+          <div>
+            <div class="content">
+              <span>Proximamente</span>
+            </div>
+          </div>
+          <div>
+            <div class="content">
+              <span>Proximamente</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <hr class="lineaInferior" />
+      <section id="peliculas" class="contenedor-tarjetas"></section>
+    </main>
+    <footer>
+      <div id="footer">
+        <div class="left">
+          <div class="right">
+            <div class="footerlink">
+              <div style="clear: both"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
     <script src="./scripts/tempData.js"></script>
     <script src="./scripts/index.js"></script>
   </body>
