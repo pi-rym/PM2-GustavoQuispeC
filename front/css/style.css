@@ -121,13 +121,13 @@
 
   .lineaSuperior{
 	border: none;
-    border-top: 2px solid yellow;
+    border-top: 2px solid #cacf00;
 	
 	margin-bottom: 45px;
 }
 .lineaInferior{
 	border: none;
-    border-top: 2px solid yellow;
+    border-top: 2px solid #cacf00;
 	margin-top: 20px;
 	
 }
@@ -221,13 +221,23 @@
     }
   }
 }
-/*!*********************************Cards******************************************************************** */
+/*!----------CARTELERA----------------------------------------*/
+.cartelera{
+	color: white;
+	text-align: left;
+	margin-left: 100px;
+}
+
+
+/*!----------CARD----------------------------------------*/
 
 .contenedor-tarjetas {
     display: flex;
     flex-wrap: nowrap; /* Evita que las tarjetas se envuelvan a la siguiente línea */
     justify-content: center;
     overflow-x: auto; /* Agrega desplazamiento horizontal si el contenido es demasiado ancho */
+	margin-top: 20px;
+	
 }
 
 .imagen {
@@ -243,6 +253,8 @@
 	margin: 0 30px; 
 	transition: transform 0.5s ease;
 	cursor: pointer;
+	margin-top: 50px;
+	margin-bottom:200px ;
 }
 
 .tarjetaCuerpo {
@@ -275,6 +287,7 @@
     padding: 10px 0px 5px 20px;
     background-color: #cacf00;
     border-radius: 0; /* Quita el redondeo de las esquinas */
+	
 }
 
 .año {
@@ -307,6 +320,7 @@
 	font-size: 0.86em;
 	line-height: 1.667em;
 	text-align: center;
+	margin-top: 100px;
 }
 #footer .left {
 	background:url(../assets/img/footer-left.gif) no-repeat left top;
