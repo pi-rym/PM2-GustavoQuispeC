@@ -8,8 +8,12 @@
 	height: 85px;
 	margin: 0 auto;
 	display: block;
-  
+	transition: transform 0.5s ease;
   }
+  .logo:hover {
+    transform: scale(1.1); /* Ajusta el valor según el nivel de zoom deseado */
+	
+}
   /*!-----------------------------Menu Principal-------------------------------------------------------------------------*/
   a {
 	color: white;
@@ -153,31 +157,31 @@
     overflow: hidden;
 
     &:nth-of-type(1) {
-      background: url("https://es.web.img2.acsta.net/pictures/21/12/01/12/07/0243323.jpg")
+      background: url("../assets/img/0243323.webp")
         no-repeat 50% / cover;
     }
     &:nth-of-type(2) {
-      background: url("https://www.originalfilmart.com/cdn/shop/products/terminator_1984_french_1p_original_film_art_600x.jpg?v=1568844372")
+      background: url("../assets/img/terminator.webp")
         no-repeat 50% / cover;
     }
     &:nth-of-type(3) {
-      background: url("https://es.web.img3.acsta.net/pictures/23/06/01/13/53/1499036.jpg")
+      background: url("../assets/img/Indiana.jpg")
         no-repeat 50% / cover;
     }
     &:nth-of-type(4) {
-      background: url("https://static.cinepolis.com/resources/mx/movies/posters/414x603/41041-248676-20230404050924.jpg")
+      background: url("../assets/img/MarioBros.jpg")
         no-repeat 50% / cover;
     }
 	&:nth-of-type(5) {
-		background: url("https://www.ecartelera.com/carteles/5400/5407/001_m.jpg")
+		background: url("../assets/img/Rocky.jpg")
 		  no-repeat 50% / cover;
 	  }
 	  &:nth-of-type(6) {
-		background: url("https://lumiere-a.akamaihd.net/v1/images/56015l02_bigsal_argentina_intpayoff_4x5_b6776139.jpeg?region=0%2C0%2C2250%2C2813")
+		background: url("../assets/img/Thor.jpeg")
 		  no-repeat 50% / cover;
 	  }
 	  &:nth-of-type(7) {
-		background: url("https://www.ecartelera.com/carteles/5200/5211/001_m.jpg")
+		background: url("../assets/img/Momia.jpg")
 		  no-repeat 50% / cover;
 	  }
 

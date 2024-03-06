@@ -52,8 +52,8 @@ class Pelicula {
   
   // * Hacer una solicitud HTTP de tipo GET para obtener las películas
   const listarPeliculas = () => {
-    $.get(`https://students-api.2.us-1.fl0.io/movies`, function(data) {
-      const peliculas = data.map(item => new Pelicula(item.title, item.year, item.director, item.duration, item.rate,item.genre,item.poster));
+    $.get(`https://students-api.2.us-1.fl0.io/movies`, (data) => {
+      const peliculas = data.map(item => new Pelicula(item.title, item.year, item.director, item.duration, item.rate, item.genre, item.poster));
       repository.peliculas = peliculas;
       renderPeliculas();
     });
