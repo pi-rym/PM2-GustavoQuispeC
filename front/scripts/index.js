@@ -1,72 +1,67 @@
-console.log(tempData);
-
-class RepositoryPeliculas{
-    constructor(tempData){
-        this.tempData = tempData;
+class Pelicula {
+    constructor(title, year, director, duration,rate,genre, poster) {
+      this.title = title;
+      this.year = year;
+      this.director = director;
+      this.duration = duration;
+      this.rate = rate;
+      this.genre = genre;
+      this.poster = poster;
+      
     }
-    getAllPeliculas (){
-        return this.tempData;
+  }
+  
+  class Repository {
+    constructor() {
+      this.peliculas = [];
     }
-}   
-
-const repositoryPeliculas = new RepositoryPeliculas(tempData);
-
-function CreatetHTML(tempData) {
-    const { title, year, director,duration,poster} = tempData;
-    
-    const titulo = document.createElement("h3");
-    titulo.textContent = title;
-
-    const año = document.createElement("h4");
-    año.textContent = `Año: ${year}`; 
-    año.classList.add("año");
-   
-    const director_ = document.createElement("h4");
-    director_.textContent = `Director: ${director}`;
-    director_.classList.add("director");
-
-
-    const duracion = document.createElement("h4");
-    duracion.textContent =`Duracion : ${duration}` ;
-    duracion.classList.add("duracion");
-    
-   
-
-    const imagen = document.createElement("img");
-    imagen.classList.add("imagen");
-    imagen.src = poster;
-   
-
-    const CuerpoCard = document.createElement("div");
-    CuerpoCard.classList.add("cuerpo");
-    CuerpoCard.appendChild(imagen);
-    CuerpoCard.appendChild(director_);
-    CuerpoCard.appendChild(duracion);
-    CuerpoCard.appendChild(año);
-
-    const TituloCard = document.createElement("div");
-    TituloCard.appendChild(titulo);
-    TituloCard.classList.add("titulo");
-
-    const tarjeta = document.createElement("div");
-    tarjeta.appendChild(TituloCard);
-    tarjeta.appendChild(CuerpoCard);
-    tarjeta.classList.add("tarjeta");
-
-    return tarjeta;
-}
-
-function renderListPeliculas() {
-    const container = document.getElementById("peliculas");
-    container.innerHTML = "";
-
-    const peliculas = repositoryPeliculas.getAllPeliculas();
-    const peliculaElements = peliculas.map(CreatetHTML);
-
-    peliculaElements.forEach(peliculas => {
-        container.appendChild(peliculas);
+  
+    getAllPeliculas() {
+      return this.peliculas;
+    }
+  }
+  
+  // * Mapear películas
+  const mapPeliculas = (pelicula) => {
+    const cardPelicula = document.createElement("div");
+    cardPelicula.innerHTML = `
+      <p class="titulo">${pelicula.title}</p>
+      <img class ="imagen" src="${pelicula.poster}" alt="${pelicula.title}"/>
+      <p class ="director">Director: ${pelicula.director}</p>
+      <p class="duracion">Duración: ${pelicula.duration}</p>
+      <p class="rate">Calificación: ${pelicula.rate}</p>
+      <p class="genre">Género: ${pelicula.genre}</p>
+      <p class ="año">Año: ${pelicula.year}</p>
+      `;
+      cardPelicula.classList.add("tarjeta");
+  
+    return cardPelicula;
+  };
+  
+  // * Renderizar películas
+  
+  const renderPeliculas = () => {
+    const containersPeliculas = document.getElementById("contenedorPeliculas");
+    containersPeliculas.innerHTML = "";
+    const peliculas = repository.getAllPeliculas();
+  
+    const allPeliculas = peliculas.map(mapPeliculas);
+  
+    allPeliculas.forEach((card) => containersPeliculas.appendChild(card));
+  };
+  
+  // * Hacer una solicitud HTTP de tipo GET para obtener las películas
+  const listarPeliculas = () => {
+    $.get(`https://students-api.2.us-1.fl0.io/movies`, function(data) {
+      const peliculas = data.map(item => new Pelicula(item.title, item.year, item.director, item.duration, item.rate,item.genre,item.poster));
+      repository.peliculas = peliculas;
+      renderPeliculas();
     });
-}
-window.onload = renderListPeliculas;
+  };
+  
+  const repository = new Repository();
+  
+  listarPeliculas();
+
 
 

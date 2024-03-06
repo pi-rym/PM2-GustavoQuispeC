@@ -241,7 +241,7 @@
 }
 
 .imagen {
-	width: 300px;
+	width: 330px;
 	height: 450px;
 	
 }
@@ -249,7 +249,7 @@
 .tarjeta {
     margin: 0 10px; /* Ajusta los márgenes entre las tarjetas según sea necesario */
     flex: 0 0 auto; /* Evita que las tarjetas cambien de tamaño */
-    width: 300px; /* Anchura fija para las tarjetas */
+    width: 330px; /* Anchura fija para las tarjetas */
 	margin: 0 30px; 
 	transition: transform 0.5s ease;
 	cursor: pointer;
@@ -257,14 +257,7 @@
 	margin-bottom:200px ;
 }
 
-.tarjetaCuerpo {
-    display: flex;
-    flex-direction: column;
-    border-radius: 15px;
-    width: 100%; /* Ancho del cuerpo de la tarjeta */
-    height: 300px; /* Altura de la tarjeta */
-    
-}
+
 
 .titulo {
     font-size: 20px;
@@ -280,6 +273,8 @@
 
 .director,
 .duracion,
+.rate,
+.genre,
 .año {
     font-size: 16px;
     font-family: 'rockwell', sans-serif;
