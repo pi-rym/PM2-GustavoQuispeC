@@ -1,90 +1,8 @@
-
-  html {
-	background-color: black;
-  }
-
-  .logo {
-	width: 200px;
-	height: 85px;
-	margin: 0 auto;
-	display: block;
-	transition: transform 0.5s ease;
-  }
-  .logo:hover {
-    transform: scale(1.1); /* Ajusta el valor según el nivel de zoom deseado */
-	
+body {
+    overflow-x: hidden;
+    
 }
-  /*!-----------------------------Menu Principal-------------------------------------------------------------------------*/
-  a {
-	color: white;
-	cursor: pointer;
-	font-size: 38px;
-	text-decoration: none;
-	touch-action: manipulation;
-  }
- 
-  nav {
-	background-color: black;
-	box-shadow: 0 0.8rem 2.4rem,
-	  0 1.6rem 5.6rem, 0 2.4rem 8rem;
-	display: flex;
-	flex-flow: row nowrap;
-	grid-row: 1;
-	padding: 1.2rem;
-	
-	ul {
-	  display: flex;
-	  flex-flow: row nowrap;
-  
-	  &:nth-of-type(2) {
-		align-items: center;
-		gap: 1.2em;
-		justify-content: center;
-		width: 100%;
-  
-		li {
-		  align-items: center;
-  
-		  &:nth-child(-n + 3) {
-			display: none;
-			border-bottom: 0.4rem solid transparent;
-			height: 100%;
-			padding: 0 1.2rem;
-			transition: border 350ms ease-in;
-		  }
-  
-		  &:first-of-type,
-		  &:last-of-type {
-			margin-left: auto;
-		  }
 
-		  &:hover {
-			border-color:  rgb(255 209 98 / 60%);
-  
-			a {
-			  color: yellow;
-			}
-		  }
-		}
-	  }
-	}
-	a {
-	  transition: color 350ms ease-in;
-	}
-  }
-  @media only screen and (min-width: 760px) {
-	nav {
-	  ul {
-		&:nth-of-type(2) {
-		  li {
-			&:nth-child(-n + 3) {
-			  display: flex;
-			}
-		  }
-		}
-	  }
-	}
-  }
 /*!-------- TITULO PROXIMAMENTE-------------------------------------------------------------------------*/
   .proximosEstrenos{
 	border: 3px solid black;
@@ -139,7 +57,7 @@
 
 /* !-----------------------------SlideShow-------------------------------------------------------------------------*/
 
-.container {
+.contenedor {
   width: 100%;
   display: flex;
   justify-content: center;
@@ -187,7 +105,7 @@
 
     .content {
       font-size: 1.5rem;
-      color: #fff;
+      color: yellow;
       display: flex;
       align-items: center;
       padding: 15px;
@@ -247,6 +165,7 @@
 .imagen {
 	width: 330px;
 	height: 450px;
+	margin: 0;
 	
 }
 
@@ -273,6 +192,8 @@
     background-color: #cacf00;
     border-radius: 15px 15px 0 0;
     word-break: break-all;
+	margin-top:0 ;
+	margin-bottom: 0;
 }
 
 .director,
@@ -286,7 +207,8 @@
     padding: 10px 0px 5px 20px;
     background-color: #cacf00;
     border-radius: 0; /* Quita el redondeo de las esquinas */
-	
+	margin-top: 0;
+	margin-bottom: 0;
 }
 
 .año {
@@ -298,70 +220,78 @@
 	
 }
 
+/*!----------FOOTER----------------------------------------*/
 
-
-
-
-
-
-
-
-
-
-/*!-----------------------------Footer-------------------------------------------------------------------------*/
-#footer {
-	position: fixed;
-	bottom: 0;
-	left: 0;
-	width: 100%;
-	background: url(../assets/img/footer-tail.gif) repeat-x left top #bfbfbf;
-	color: #1d1d1d;
-	font-size: 0.86em;
-	line-height: 1.667em;
-	text-align: center;
-	margin-top: 100px;
+.footer {
+  background: #000;
+  padding: 2px 0px;
+  font-family: 'Play', sans-serif;
+  text-align: center;
+  font-size: 20px;
+  position: fixed; /* Posiciona el footer de forma fija */
+  bottom: 0; /* Lo coloca en la parte inferior */
+  width: 100%; /* Ajusta el ancho para que ocupe toda la pantalla */
 }
-#footer .left {
-	background:url(../assets/img/footer-left.gif) no-repeat left top;
+
+.footer .row_footer {
+  width: 100%;
+  margin: 1% 0%;
+  padding: 0.3% 0%;
+  color: gray;
+  font-size: 0.8em;
 }
-#footer .right {
-	min-height:89px;
-	height:auto !important;
-	height:89px;
-	background:url(../assets/img/footer-right.gif) no-repeat right top;
-	text-align:center;
+
+.footer .row_footer a {
+  text-decoration: none;
+  color: gray;
+  transition: 0.5s;
 }
-#footer .footerlink {
-	padding:35px 25px;
+
+.footer .row_footer a:hover {
+  color: yellow;
 }
-.footerlink p {
-	margin:0;
-	padding:0;
-	line-height:normal;
-	white-space:nowrap;
-	text-indent:inherit;
-	
+
+.footer .row_footer ul {
+  width: 100%;
 }
-.footerlink a {
-	color:#1d1d1d;
-	font-weight:normal;
-	margin:0;
-	padding:0;
-	border:none;
-	text-decoration:underline;
-	background-color:transparent;
+
+.footer .row_footer ul li {
+  display: inline-block;
+  margin: 0px 30px;
 }
-.footerlink a:hover {
-	color:#1d1d1d;
-	background-color:transparent;
-	text-decoration:none;
+
+.footer .row_footer a i {
+  font-size: 2em;
+  margin: 0% 1%;
 }
-.footerlink .lf {
-	float:left;
-}
-.footerlink .rf {
-	float:right;
-}
-body {
-	overflow-x: hidden;
+
+@media (max-width: 720px) {
+  .footer {
+      text-align: left;
+      padding: 5%;
   }
+
+  .footer .row_footer ul li {
+      display: block;
+      margin: 5px 0px;
+      text-align: left;
+  }
+
+  .footer .row_footer a i {
+      margin: 0% 3%;
+  }
+}
+
+
+
+
+	
+  #map-container {
+    height: 400px; /* Establece la altura deseada para el mapa */
+    width: 100%;
+  }
+
+
+
+
+

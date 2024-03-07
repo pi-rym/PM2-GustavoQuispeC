@@ -1,67 +1,28 @@
-class Pelicula {
-    constructor(title, year, director, duration,rate,genre, poster) {
-      this.title = title;
-      this.year = year;
-      this.director = director;
-      this.duration = duration;
-      this.rate = rate;
-      this.genre = genre;
-      this.poster = poster;
-      
-    }
+
+  const SeccionPelicula = document.getElementById('contenedorPeliculas')
+
+  function renderPeliculas(movie){
+  const pelicula = document.createElement("article")
+  const containerPeliculas= document.createElement("div")
+  
+  pelicula.classList.add('contenedorTarjeta');
+  containerPeliculas.classList.add('tarjeta');
+  
+  containerPeliculas.innerHTML=`
+  <h3 class="titulo">${movie.title}</h3>
+  <img class="imagen" src="${movie.poster}" alt="${movie.title}">
+  <p class="director"><strong>Director: </strong> ${movie.director}</p>
+  <p class="duracion"><strong>Duracion: </strong> ${movie.duration}</p>
+  <p class="genre"><strong>Genero: </strong> ${movie.genre}</p>
+  <p class="rate"><strong>rate: </strong> ${movie.rate}</p>
+  <p class="año"><strong>rate: </strong> ${movie.year}</p>
+  `
+  SeccionPelicula.appendChild(pelicula);
+  pelicula.appendChild(containerPeliculas);
+ 
   }
   
-  class Repository {
-    constructor() {
-      this.peliculas = [];
-    }
+  $.get('https://students-api.2.us-1.fl0.io/movies',(data)=>
+  data.forEach(renderPeliculas)
   
-    getAllPeliculas() {
-      return this.peliculas;
-    }
-  }
-  
-  // * Mapear películas
-  const mapPeliculas = (pelicula) => {
-    const cardPelicula = document.createElement("div");
-    cardPelicula.innerHTML = `
-      <p class="titulo">${pelicula.title}</p>
-      <img class ="imagen" src="${pelicula.poster}" alt="${pelicula.title}"/>
-      <p class ="director">Director: ${pelicula.director}</p>
-      <p class="duracion">Duración: ${pelicula.duration}</p>
-      <p class="rate">Calificación: ${pelicula.rate}</p>
-      <p class="genre">Género: ${pelicula.genre}</p>
-      <p class ="año">Año: ${pelicula.year}</p>
-      `;
-      cardPelicula.classList.add("tarjeta");
-  
-    return cardPelicula;
-  };
-  
-  // * Renderizar películas
-  
-  const renderPeliculas = () => {
-    const containersPeliculas = document.getElementById("contenedorPeliculas");
-    containersPeliculas.innerHTML = "";
-    const peliculas = repository.getAllPeliculas();
-  
-    const allPeliculas = peliculas.map(mapPeliculas);
-  
-    allPeliculas.forEach((card) => containersPeliculas.appendChild(card));
-  };
-  
-  // * Hacer una solicitud HTTP de tipo GET para obtener las películas
-  const listarPeliculas = () => {
-    $.get(`https://students-api.2.us-1.fl0.io/movies`, (data) => {
-      const peliculas = data.map(item => new Pelicula(item.title, item.year, item.director, item.duration, item.rate, item.genre, item.poster));
-      repository.peliculas = peliculas;
-      renderPeliculas();
-    });
-  };
-  
-  const repository = new Repository();
-  
-  listarPeliculas();
-
-
-
+  )
