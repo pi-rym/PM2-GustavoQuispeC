@@ -1,0 +1,15 @@
+{
+  "name": "pm2-gustavoquispec",
+  "version": "1.0.0",
+  "description": "",
+  "main": "front/scripts/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon front/scripts/index.js"
+  },
+  "author": "Gustavo",
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^3.1.0"
+  }
+}
