@@ -9,9 +9,11 @@ class CarritoCompra{
 
     calcularTotal() {
         let total = 0;
-        this.productos.forEach(producto => {
-            total += producto.precio;
-        });
+        for (const item of this.productos) {
+            total += item.precio * item.Cantidad;
+            
+        }
+       
         return total;
     }
 
