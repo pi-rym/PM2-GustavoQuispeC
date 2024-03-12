@@ -32,3 +32,4 @@ recuperarPeliculas();
 //   data.forEach(renderPeliculas)
   
 //   )
+
