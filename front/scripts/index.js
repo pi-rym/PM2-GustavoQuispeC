@@ -14,16 +14,3 @@ const recuperarPeliculas = async () => {
 };
 recuperarPeliculas();
 
-// $.get('https://students-api.up.railway.app/movies',(data)=>
-//   data.forEach(renderPeliculas)
-
-//   )
-// axios.get('https://students-api.up.railway.app/movies')
-// .then((response) => {
-//   console.log(response.data);
-//   response.data.forEach(pelicula => {
-//     renderPeliculas(pelicula);
-//   });
-// }).catch((err) => {
-//   console.log(err.response.data.message);
-// });
