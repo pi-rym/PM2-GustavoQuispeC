@@ -85,8 +85,66 @@
         </div>
       </nav>
     </header>
+    <main>
+      <section class="m-5">
+        <h1 class="text-center">Agregar Película</h1>
+        <form id="movieForm" class="row g-3 needs-validation" novalidate>
+          <div class="col-md-4">
+            <label for="title" class="form-label">Titulo</label>
+            <input type="text" class="form-control" id="title" required />
+            <div class="invalid-feedback">Por favor ingrese un titulo</div>
+          </div>
+          <div class="col-md-4">
+            <label for="year" class="form-label">Año</label>
+            <input type="number" class="form-control" id="year" required />
+            <div class="invalid-feedback">Debe ingresar el año</div>
+          </div>
 
-    <main></main>
+          <div class="col-md-4">
+            <label for="director" class="form-label">Director</label>
+            <input type="text" class="form-control" id="director" required />
+            <div class="invalid-feedback">Debe registrar al director.</div>
+          </div>
+          <div class="col-md-4">
+            <label for="duration" class="form-label">Duración</label>
+            <input type="text" class="form-control" id="duration" required />
+            <div class="invalid-feedback">
+              Debe ingresar la duracion de la película
+            </div>
+          </div>
+          <div class="col-md-4">
+            <label for="genre" class="form-label">Género</label>
+            <input type="text" class="form-control" id="genre" required />
+            <div class="invalid-feedback">Debe ingresar el género.</div>
+          </div>
+          <div class="col-md-4">
+            <label for="rate" class="form-label">Rate</label>
+            <input type="number" class="form-control" id="rate" required />
+            <div class="invalid-feedback">Debe ingresar la puntuación.</div>
+          </div>
+          <div class="col-md-12">
+            <label for="poster" class="form-label">Poster</label>
+            <input type="text" class="form-control" id="poster" required />
+            <div class="invalid-feedback">Debe colocar el link del poster.</div>
+          </div>
+
+          <div class="col-12">
+            <div class="row">
+              <div class="col-2">
+                <button id="submit" class="btn btn-primary" type="submit">
+                  Registrar
+                </button>
+              </div>
+              <div class="col-2">
+                <button class="btn btn-danger limpiar" type="reset">
+                  Limpiar
+                </button>
+              </div>
+            </div>
+          </div>
+        </form>
+      </section>
+    </main>
     <footer>
       <div class="footer">
         <div class="row_footer">
@@ -107,9 +165,12 @@
 
         <div class="row_footer">
           Cinema PopCorn Copyright © 2024 Cinema PopCorn - Todos los derechos
-          <!-- reservados || Creado por: Gustavo -->
+          reservados || Creado por: Gustavo
         </div>
       </div>
     </footer>
+    <script src="../scripts/clean.js"></script>
+    <script src="../scripts/validation.js"></script>
+    <script src="../browser/bundle.js"></script>
   </body>
 </html>
