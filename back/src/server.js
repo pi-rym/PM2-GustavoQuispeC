@@ -9,9 +9,6 @@ app.use(morgan("dev"));
 app.use(cors());
 app.use(express.json());
 
-//! Middleware
-
-
 app.use(router);
 
 module.exports = app;

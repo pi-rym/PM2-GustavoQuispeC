@@ -21,7 +21,7 @@ function renderPeliculas(movie) {
     <p class="año"><strong>rate: </strong> ${movie.year}</p>
   `;
 
-  // Añadiendo la película al contenedor seguro
+  // Añadiendo la película al contenedor 
   SeccionPeliculaSafe.appendChild(pelicula);
   pelicula.appendChild(containerPeliculas);
 }

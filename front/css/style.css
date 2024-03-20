@@ -157,9 +157,9 @@ body {
 }
 
 .tarjeta {
-  margin: 0 10px; /* Ajusta los márgenes entre las tarjetas según sea necesario */
-  flex: 0 0 auto; /* Evita que las tarjetas cambien de tamaño */
-  width: 330px; /* Anchura fija para las tarjetas */
+  margin: 0 10px;
+  flex: 0 0 auto; 
+  width: 330px; 
   margin: 0 30px;
   transition: transform 0.5s ease;
   cursor: pointer;
@@ -191,8 +191,7 @@ body {
   color: black;
   padding: 10px 0px 5px 20px;
   background-color: #cacf00;
-  border-radius: 0; /* Quita el redondeo de las esquinas */
-  margin-top: 0;
+  border-radius: 0; 
   margin-bottom: 0;
 }
 
@@ -201,7 +200,7 @@ body {
 }
 
 .tarjeta:hover {
-  transform: scale(1.1); /* Ajusta el valor según el nivel de zoom deseado */
+  transform: scale(1.1);
 }
 
 /*!----------FOOTER----------------------------------------*/
@@ -212,9 +211,9 @@ body {
   font-family: "Play", sans-serif;
   text-align: center;
   font-size: 20px;
-  position: fixed; /* Posiciona el footer de forma fija */
-  bottom: 0; /* Lo coloca en la parte inferior */
-  width: 100%; /* Ajusta el ancho para que ocupe toda la pantalla */
+  position: fixed; 
+  bottom: 0;
+  width: 100%; 
 }
 
 .footer .row_footer {
@@ -267,6 +266,6 @@ body {
 }
 
 #map-container {
-  height: 400px; /* Establece la altura deseada para el mapa */
+  height: 400px; 
   width: 100%;
 }

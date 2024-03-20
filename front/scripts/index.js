@@ -2,7 +2,7 @@ const renderPeliculas = require("./renderCards");
 const createMovie = require("./createMovie");
 const axios = require("axios");
 
-// Verificar si estamos en la página index.html comprobando la existencia del id contenedorPeliculas
+// Verificamos si estamos en la página index.html comprobando la existencia del id contenedorPeliculas
 if (document.getElementById("contenedorPeliculas")) {
   const recuperarPeliculas = async () => {
     try {
@@ -18,12 +18,11 @@ if (document.getElementById("contenedorPeliculas")) {
 
   recuperarPeliculas();
 }
-
-// Verificar si estamos en la página addMovie.html comprobando id movieForm
+// Verificamos si estamos en la página addMovie.html comprobando id movieForm
 const movieForm = document.getElementById("movieForm");
 if (movieForm) {
   const submitForm = async (event) => {
-    event.preventDefault(); 
+    event.preventDefault();
     try {
       const response = await axios.post(
         "http://localhost:3000/movies",
@@ -31,7 +30,16 @@ if (movieForm) {
       );
       console.log(response);
       alert("¡Película registrada correctamente!");
-      movieForm.reset();
+
+      // Limpiar los campos
+      const formInputs = movieForm.querySelectorAll(
+        'input[type="text"], input[type="number"]'
+      );
+      formInputs.forEach((input) => {
+        input.value = "";
+      });
+
+      movieForm.classList.remove("was-validated");
     } catch (error) {
       if (error.response && error.response.data) {
         console.log(error.response.data.message);

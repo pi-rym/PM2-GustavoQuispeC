@@ -75,7 +75,7 @@
                 class="form-control me-2"
                 type="search"
                 placeholder="Buscar película"
-                aria-label="Search"
+                aria-label="Buscar"
               />
               <button class="btn btn-outline-success" type="submit">
                 Buscar
@@ -96,8 +96,17 @@
           </div>
           <div class="col-md-4">
             <label for="year" class="form-label">Año</label>
-            <input type="number" class="form-control" id="year" required />
-            <div class="invalid-feedback">Debe ingresar el año</div>
+            <input
+              type="number"
+              class="form-control"
+              id="year"
+              min="1960"
+              maxlength="4"
+              required
+            />
+            <div class="invalid-feedback">
+              Debe ingresar el año (año debe ser mayor o igual a 1960.)
+            </div>
           </div>
 
           <div class="col-md-4">
@@ -119,8 +128,18 @@
           </div>
           <div class="col-md-4">
             <label for="rate" class="form-label">Rate</label>
-            <input type="number" class="form-control" id="rate" required />
-            <div class="invalid-feedback">Debe ingresar la puntuación.</div>
+            <input
+              type="number"
+              class="form-control"
+              id="rate"
+              step="0.01"
+              max="10"
+              min="1"
+              required
+            />
+            <div class="invalid-feedback">
+              Debe ingresar la puntuación (puntuacion debe estar entre 1 y 10)
+            </div>
           </div>
           <div class="col-md-12">
             <label for="poster" class="form-label">Poster</label>
@@ -169,8 +188,8 @@
         </div>
       </div>
     </footer>
-    <script src="../scripts/clean.js"></script>
-    <script src="../scripts/validation.js"></script>
-    <script src="../browser/bundle.js"></script>
+    <script src="../browser/addMovieClean.js"></script>
+    <script src="../browser/addMovieValidation.js"></script>
+    <script src="../browser/index.js"></script>
   </body>
 </html>
