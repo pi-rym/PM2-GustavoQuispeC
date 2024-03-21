@@ -31,7 +31,7 @@ if (movieForm) {
       console.log(response);
       alert("¡Película registrada correctamente!");
 
-      // Limpiar los campos
+      // Limpiar los campos del formulario
       const formInputs = movieForm.querySelectorAll(
         'input[type="text"], input[type="number"]'
       );
@@ -44,9 +44,7 @@ if (movieForm) {
       if (error.response && error.response.data) {
         console.log(error.response.data.message);
       } else {
-        console.error(
-          'El error no tiene una propiedad "response" o "response.data"'
-        );
+        console.error('Error "response.data"');
       }
     }
   };

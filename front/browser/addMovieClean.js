@@ -15,7 +15,7 @@
   \**************************/
 /***/ (() => {
 
-eval("document.querySelector(\".limpiar\").addEventListener(\"click\", function (event) {\r\n  event.preventDefault(); // Evita que el formulario se envíe\r\n\r\n  // Selecciona todos los campos de entrada del formulario\r\n  const inputs = document.querySelectorAll(\"input\");\r\n\r\n  // Recorre cada campo de entrada y establece su valor en una cadena vacía\r\n  inputs.forEach((input) => {\r\n    input.value = \"\";\r\n  });\r\n});\r\n\n\n//# sourceURL=webpack://front/./scripts/clean.js?");
+eval("document.querySelector(\".limpiar\").addEventListener(\"click\", function (event) {\r\n  event.preventDefault(); // Evita que el formulario se envíe\r\n\r\n  const inputs = document.querySelectorAll(\"input\");\r\n\r\n  inputs.forEach((input) => {\r\n    input.value = \"\";\r\n  });\r\n});\r\n\n\n//# sourceURL=webpack://front/./scripts/clean.js?");
 
 /***/ })
 
